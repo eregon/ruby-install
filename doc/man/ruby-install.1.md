@@ -6,7 +6,7 @@
 
 ## DESCRIPTION
 
-Installs Ruby, JRuby, Rubinius or MagLev.
+Installs Ruby, JRuby, Rubinius, TruffleRuby or MagLev.
 
 https://github.com/postmodern/ruby-install#readme
 
