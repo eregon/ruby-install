@@ -3,7 +3,7 @@
 source "$ruby_install_dir/versions.sh"
 source "$ruby_install_dir/checksums.sh"
 
-ruby_versions_url="https://raw.githubusercontent.com/postmodern/ruby-versions/master"
+ruby_versions_url="https://raw.githubusercontent.com/eregon/ruby-versions/truffleruby"
 ruby_versions_files=({versions,stable}.txt checksums.{md5,sha1,sha256,sha512})
 
 #
