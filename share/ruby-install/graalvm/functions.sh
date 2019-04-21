@@ -22,8 +22,13 @@ function install_ruby()
 #
 function post_install()
 {
+	log "Downloading the Ruby component ..."
+	local ruby_component_archive="ruby-installable-ce-$ruby_version-$platform-$arch.jar"
+	local ruby_component_url="https://github.com/oracle/truffleruby/releases/download/vm-$ruby_version/$ruby_component_archive"
+	download "$ruby_component_url" "$src_dir/$ruby_component_archive" || return $?
+
 	log "Installing the Ruby component ..."
-	"$install_dir/bin/gu" install ruby || return $?
+	"$install_dir/bin/gu" install -L "$src_dir/$ruby_component_archive" || return $?
 
 	log "Running truffleruby post-install hook ..."
 	"$install_dir/jre/languages/ruby/lib/truffle/post_install_hook.sh" || return $?
